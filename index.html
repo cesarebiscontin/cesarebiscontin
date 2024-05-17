@@ -1,0 +1,283 @@
+<!DOCTYPE html>
+<html lang="it">
+<head>
+    <link rel="icon" href="favicon.png" type="image/png">
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Il giovane favoloso: biografia</title>
+    <style>
+    body {
+      font-family: "Alegreya Sans";
+      margin: 0;
+      padding: 0; 
+      min-height: 100%;
+	  background-color: #9C9C9C;} 	  
+	
+	
+	
+	.banner {
+      background-image: url('sfonfo real.png');
+	  text-shadow: 4px 4px 5px black;
+      color: white;
+      padding: 75px;
+      text-align: center;
+      font-size: 40px;
+	  background-size: cover;
+	  font-style: italic;}
+	
+	
+	nav {
+      rgba(0, 0, 0, 0.5); /* Sfondo semi-trasparente per il testo */}
+	  
+	  
+	  
+    nav ul {
+      list-style-type: none;
+      margin: 0;
+      padding: 0;
+      text-align: center;}
+	  
+	  
+	  
+    nav ul li {
+      display: inline;}
+	  
+	  
+	  
+    nav ul li a {
+      display: inline-block;
+      padding: 60px 30px;
+      text-decoration: none;
+      color: white;
+	  font-size: 30px;
+	  margin-top: 0;}
+	  
+	  
+	  
+    nav ul li a:hover {
+      background-color: rgba(0, 0, 0, 0.5); /* per quando metti il mouse nell'icona*/
+	  text-decoration: underline;}
+
+	
+	
+    footer {
+      background-color: #3D3D3D;
+      color: white;
+      padding: 10px 0;
+      text-align: center;
+      margin-top: auto;
+      width: 100%;
+      bottom: 0;
+	  background-size: cover;
+	  font-size: 30px;}
+    
+	
+	
+    .titolo {
+      text-align: center;
+      font-family: "Alegreya Sans";
+      font-weight: bold; /* bold per mettere il grassetto*/
+      font-size: 30px;
+      padding: 10px;}
+    
+	
+	
+    .content-box {
+      text-align: left;
+      font-family: "Alegreya Sans";
+      font-size: 25px;
+	  border: 1px solid black; /* Linea di 1px di spessore, colore nero */
+      padding: 20px; /* Spazio interno al bordo */
+      margin: 50px;
+	  border-top-left-radius: 10px;
+	  border-top-right-radius: 10px;
+	  border-bottom-left-radius: 10px;
+	  border-bottom-right-radius: 10px;
+	  background-color: #D2D2D2;
+	  box-shadow: 4px 4px 5px black;}	  
+	  
+	  
+	
+	.testo p{
+	  margin-bottom: 10px}
+	  
+	  
+	  
+	figure{
+      text-align: center;}
+	  
+	  
+
+    video{
+      max-width: 100%;
+	  margin-bottom: 25px;
+      height: auto;} 
+
+
+ #scrollToTopBtn {
+            display: none;
+            position: fixed;
+            bottom: 20px;
+            right: 20px;
+            padding: 10px 20px;
+            background-color: #000;
+            color: #fff;
+            border: none;
+            border-radius: 5px;
+            cursor: pointer;
+        }	  
+	
+	    #gallery {
+            text-align: center;
+        }
+        #gallery img {
+            max-width: 100%;
+            width: auto;
+            display: none;
+        }
+        #gallery img.active {
+            display: block;
+        }
+        #buttons {
+            margin-top: 10px;
+        }
+        button {
+            padding: 10px 20px;
+            margin: 5px;
+            border: none;
+            background-color: #007BFF;
+            color: white;
+            cursor: pointer;
+            border-radius: 5px;
+        }
+        button:disabled {
+            background-color: #aaa;
+            cursor: not-allowed;
+        }
+	
+    </style>
+    <script> 
+        window.addEventListener('scroll', function() {
+            const div = document.querySelector('div.banner');
+            div.style.opacity = 1 - window.scrollY / 600;
+        });
+    </script>   <!uso java script per fa sì che l'immagine nel banner, scendendo con la levetta del mouse, sparisca>
+</head>
+<body>
+    <header> <!l'header mi permette di posizionare ciò che voglio in capo alla pagina>
+        <div class="banner">
+            <h1>GIACOMO LEOPARDI</h1> <! titolo !>
+                <nav> <! nav è usato per contenere link di navigazione !>
+					<ul> <! ul lo utilizzo per creare degli elenchi!>
+                        <li><a href="index.html">Biografia</a></li>
+						<li><a href="pensiero.html">Pensiero</a></li>
+                        <li><a href="opere.html">Opere</a></li>
+                        <li><a href="fonti.html">Fonti</a></li>						
+					</ul>
+			    </nav>
+		</div>		
+    </header>
+    <div class="titolo">
+        <hr> <! linea orizzontale !>
+        Biografia
+	    <hr>
+    </div>
+	<audio id="backgroundAudio" controls>
+        <source src="audio.mp3" type="audio/mpeg">
+        Il tuo browser non supporta l'elemento audio.
+    </audio>
+	<div id="gallery">
+        <img src="1.avif" alt="Immagine 1" class="active" height="500">
+        <img src="2.jpg" alt="Immagine 2" height="500">
+        <img src="3.jpg" alt="Immagine 3" height="500">
+        <div id="buttons">
+            <button id="prevBtn" onclick="prevImage()">Precedente</button>
+            <button id="nextBtn" onclick="nextImage()">Successiva</button>
+        </div>
+    </div>
+    
+    <script>
+        let currentImageIndex = 0;
+        const images = document.querySelectorAll('#gallery img');
+        const totalImages = images.length;
+
+        function updateGallery() {
+            images.forEach((img, index) => {
+                img.classList.remove('active');
+                if (index === currentImageIndex) {
+                    img.classList.add('active');
+                }
+            });
+            document.getElementById('prevBtn').disabled = currentImageIndex === 0;
+            document.getElementById('nextBtn').disabled = currentImageIndex === totalImages - 1;
+        }
+
+        function prevImage() {
+            if (currentImageIndex > 0) {
+                currentImageIndex--;
+                updateGallery();
+            }
+        }
+
+        function nextImage() {
+            if (currentImageIndex < totalImages - 1) {
+                currentImageIndex++;
+                updateGallery();
+            }
+        }
+
+        updateGallery();
+    </script>
+    <br> <! a capo !>
+    <div class="content-box ">
+    <p> <! paragrafo !>
+	<ul>
+        <li><strong>29 giugno 1798</strong>: Nasce a Recanati, nelle Marche, da una famiglia aristocratica. Figlio di Monaldo Leopardi e Adelaide Antici.</li>  <! lo strong serve per mettere in grassetto !>
+        <br><hr><br><li><strong>1809-1816</strong>: Inizia i suoi studi da autodidatta nella biblioteca paterna, mostrando una straordinaria capacità di apprendimento e una passione per la letteratura e la filosofia. Questi anni sono noti come i "sette anni di studio matto e disperatissimo".</li>
+        <br><hr><br><li><strong>1817</strong>: Comincia a soffrire di problemi di salute, che peggiorano nel corso degli anni e influenzano profondamente la sua vita e le sue opere.</li>
+        <br><hr><br><li><strong>1819</strong>: Scrive il "Discorso di un italiano intorno alla poesia romantica", in cui esprime le sue idee sul classicismo e il romanticismo.</li>
+        <br><hr><br><li><strong>1819</strong>: Tenta una fuga da Recanati per cercare una vita diversa, ma il tentativo fallisce a causa dell'intervento del padre.</li>
+        <br><hr><br><li><strong>1820-1823</strong>: Pubblica i "Primi idilli", tra cui "L'infinito" (1820), una delle sue poesie più celebri.</li>
+        <br><hr><br><li><strong>1822</strong>: Si trasferisce a Roma nella speranza di trovare un ambiente più stimolante, ma rimane deluso dall'esperienza.</li>
+        <br><hr><br><li><strong>1825-1828</strong>: Soggiorna a Milano, Bologna, Pisa e Firenze, cercando di migliorare la sua salute e di trovare nuovi stimoli culturali. Durante questo periodo, lavora come collaboratore per l'editore Stella.</li>
+        <br><hr><br><li><strong>1827</strong>: Pubblica la prima edizione delle "Operette morali", una raccolta di dialoghi e prose filosofiche.</li>
+        <br><hr><br><li><strong>1830-1833</strong>: Si trasferisce a Firenze, dove stringe amicizia con Antonio Ranieri. Scrive i "Grandi idilli", tra cui "A Silvia" (1831) e "Canto notturno di un pastore errante dell'Asia" (1833).</li>
+        <br><hr><br><li><strong>1833</strong>: Si trasferisce a Napoli con Antonio Ranieri nella speranza di trovare un clima più favorevole per la sua salute.</li>
+        <br><hr><br><li><strong>1835</strong>: Completa la stesura dello "Zibaldone", un vasto diario di pensieri e riflessioni iniziato nel 1817 e che verrà pubblicato postumo.</li>
+        <br><hr><br><li><strong>1836-1837</strong>: Scrive "La ginestra" (1836), una delle sue ultime e più profonde poesie, in cui esprime la sua visione pessimistica dell'esistenza umana.</li>
+        <br><hr><br><li><strong>14 giugno 1837</strong>: Muore a Napoli a causa di una crisi di idropisia (accumulo di liquidi nei tessuti), aggravata dalle sue condizioni di salute precarie.</li>
+    </ul>
+	</p>
+    </div>
+	
+	<figure> <! figure mi permette di inserire una didascalia sotto al contenuto !>
+	    <video width="1000" height="600" controls autoplay loop>
+            <source src="trailer.mp4" type="video/mp4" >
+        </video>
+		<figcaption>trailer "Il giovane favoloso"(2014)</figcaption> <! didascalia !>
+	</figure>
+    <footer> <!la stessa cosa dell'header ma in basso>
+        <p>© Biscontin Cesare</p>
+    </footer>
+
+       <button id="scrollToTopBtn" onclick="scrollToTop()">Torna su</button>
+
+    <script>
+        window.onscroll = function() {scrollFunction()};
+
+        function scrollFunction() {
+            const scrollToTopBtn = document.getElementById("scrollToTopBtn");
+            if (document.body.scrollTop > 20 || document.documentElement.scrollTop > 20) {
+                scrollToTopBtn.style.display = "block";
+            } else {
+                scrollToTopBtn.style.display = "none";
+            }
+        }
+
+        function scrollToTop() {
+            window.scrollTo({top: 0, behavior: 'smooth'});
+        }
+    </script>
+  
+</body>
+</html>
