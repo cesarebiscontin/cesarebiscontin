@@ -1,0 +1,224 @@
+<!DOCTYPE html>
+<html lang="it">
+<head>
+    <link rel="icon" href="favicon.png" type="image/png">
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Il giovane favoloso: pensiero</title>
+    <style>
+    body {
+      font-family: "Alegreya Sans";
+      margin: 0;
+      padding: 0; 
+      min-height: 100%;
+	  background-color: #9C9C9C;} 	  
+	
+	
+	
+	.banner {
+      background-image: url('sfonfo real.png');
+	  text-shadow: 4px 4px 5px black;
+      color: white;
+      padding: 75px;
+      text-align: center;
+      font-size: 40px;
+	  background-size: cover;
+	  font-style: italic;}
+	
+	
+	nav {
+      rgba(0, 0, 0, 0.5); /* Sfondo semi-trasparente per il testo */}
+	  
+	  
+	  
+    nav ul {
+      list-style-type: none;
+      margin: 0;
+      padding: 0;
+      text-align: center;}
+	  
+	  
+	  
+    nav ul li {
+      display: inline;}
+	  
+	  
+	  
+    nav ul li a {
+      display: inline-block;
+      padding: 60px 30px;
+      text-decoration: none;
+      color: white;
+	  font-size: 30px;
+	  margin-top: 0;}
+	  
+	  
+	  
+    nav ul li a:hover {
+      background-color: rgba(0, 0, 0, 0.5); /* per quando metti il mouse nell'icona*/
+	  text-decoration: underline;}
+
+	
+	
+    footer {
+      background-color: #3D3D3D;
+      color: white;
+      padding: 10px 0;
+      text-align: center;
+      margin-top: auto;
+      width: 100%;
+      bottom: 0;
+	  background-size: cover;
+	  font-size: 30px;}
+    
+	
+	
+    .titolo {
+      text-align: center;
+      font-family: "Alegreya Sans";
+      font-weight: bold; /* bold per mettere il grassetto*/
+      font-size: 30px;
+      padding: 10px;}
+    
+	
+	
+    .content-box {
+      text-align: left;
+      font-family: "Alegreya Sans";
+      font-size: 25px;
+	  border: 1px solid black; /* Linea di 1px di spessore, colore nero */
+      padding: 20px; /* Spazio interno al bordo */
+      margin: 50px;
+	  border-top-left-radius: 10px;
+	  border-top-right-radius: 10px;
+	  border-bottom-left-radius: 10px;
+	  border-bottom-right-radius: 10px;
+	  background-color: #D2D2D2;
+	  box-shadow: 4px 4px 5px black;}	  
+	  
+	  
+	
+	.testo p{
+	  margin-bottom: 10px}
+	  
+	
+
+    figure{
+	text-align: center;}	
+	  
+    
+	.img{
+	text-align: center;}
+	
+	  
+	  
+
+     #scrollToTopBtn {
+            display: none;
+            position: fixed;
+            bottom: 20px;
+            right: 20px;
+            padding: 10px 20px;
+            background-color: #000;
+            color: #fff;
+            border: none;
+            border-radius: 5px;
+            cursor: pointer;
+        }
+	
+	
+	
+    </style>
+    <script> 
+        window.addEventListener('scroll', function() {
+            const div = document.querySelector('div.banner');
+            div.style.opacity = 1 - window.scrollY / 600;
+        });
+    </script>   <!uso il java script per fa sì che l'immagine nel banner, scendendo con la levetta del mouse, sparisca>
+	<script>
+
+OnImage = "www.mondadoristore.jpeg";
+OffImage = "leo bianconero.jpg";
+function displayOnImage () {
+  document.getElementById("myImage").src = OnImage;
+}
+function displayOffImage() {
+  document.getElementById("myImage").src = OffImage;
+}
+</script>
+	
+</head>
+<body>
+    
+	<header> <!l'header mi permette di posizionare ciò che voglio in capo alla pagina>
+        <div class="banner">
+            <h1>GIACOMO LEOPARDI</h1> <! titolo !>
+                <nav> <! nav è usato per contenere link di navigazione !>
+					<ul> <! ul lo utilizzo per creare degli elenchi!>
+                        <li><a href="index.html">Biografia</a></li>
+						<li><a href="pensiero.html">Pensiero</a></li>
+                        <li><a href="opere.html">Opere</a></li>
+                        <li><a href="fonti.html">Fonti</a></li>						
+					</ul>
+			    </nav>
+		</div>		
+    </header>
+    <div class="titolo">
+        <hr> <! linea orizzontale !>
+        Pensiero filosofico
+	    <hr>
+    </div>
+	<audio id="backgroundAudio" controls>
+        <source src="audio.mp3" type="audio/mpeg">
+        Il tuo browser non supporta l'elemento audio.
+    </audio>
+    <br> <! a capo !>
+    <div class="content-box ">
+    <p>
+        Giacomo Leopardi è noto non solo per la sua straordinaria produzione poetica, ma anche per il suo profondo e complesso pensiero filosofico. La filosofia di Leopardi è spesso definita come "pessimismo cosmico", poiché egli vede la condizione umana come inevitabilmente tragica e dolorosa.
+    </p>
+    <p>
+        Il punto di partenza della riflessione leopardiana è la constatazione della sofferenza e della miseria dell'uomo. Secondo Leopardi, la natura è indifferente, se non addirittura ostile, verso l'essere umano. Questo tema è centrale in opere come le "Operette morali", una raccolta di dialoghi filosofici e prose che esplorano l'infelicità e la vanità della condizione umana.
+    </p>
+    <p>
+        Uno degli aspetti più originali del pensiero leopardiano è la sua critica al progresso e alla civiltà. Leopardi sostiene che la civiltà, lungi dal migliorare la condizione umana, ha aumentato le sofferenze dell'uomo. La ragione, invece di portare felicità, ha disilluso l'uomo, privandolo delle illusioni che un tempo lo proteggevano dalla dura realtà della vita.
+    </p>
+    <p>
+        La natura, per Leopardi, crea negli uomini desideri infiniti che non possono essere soddisfatti, condannandoli così a una perenne insoddisfazione. Questo concetto è ben espresso nel "Canto notturno di un pastore errante dell'Asia", dove il pastore riflette sulla sua esistenza e sul senso della vita.
+    </p>
+    <p>
+        Tuttavia, Leopardi non si limita a un semplice pessimismo. Egli trova una forma di grandezza e di dignità nella consapevolezza della propria condizione e nella solidarietà umana. Nella poesia "La ginestra", Leopardi esprime la speranza che gli uomini, riconoscendo la loro comune fragilità, possano unirsi in una fratellanza solidale contro le avversità della natura.
+    </p>
+    <p>
+        In sintesi, il pensiero filosofico di Giacomo Leopardi è caratterizzato da un profondo pessimismo riguardo alla condizione umana e alla natura, una critica alla civiltà e al progresso, ma anche dalla ricerca di una dignità e di una solidarietà umana di fronte alla sofferenza e alla consapevolezza della propria condizione.
+    </p>
+    </div>
+	
+	</div><div class="img"><img src="leo bianconero.jpg" id="myImage" name="image" width="500" height="700" border="0" alt="immagine da cambiare" onMouseOver="displayOnImage()" onMouseOut="displayOffImage()">
+</div>
+    <footer> <!la stessa cosa dell'header ma in basso>
+        <p>© Biscontin Cesare</p>
+    </footer>
+	
+     <button id="scrollToTopBtn" onclick="scrollToTop()">Torna su</button>
+
+    <script>
+        window.onscroll = function() {scrollFunction()};
+
+        function scrollFunction() {
+            const scrollToTopBtn = document.getElementById("scrollToTopBtn");
+            if (document.body.scrollTop > 20 || document.documentElement.scrollTop > 20) {
+                scrollToTopBtn.style.display = "block";
+            } else {
+                scrollToTopBtn.style.display = "none";
+            }
+        }
+
+        function scrollToTop() {
+            window.scrollTo({top: 0, behavior: 'smooth'});
+        }
+    </script>
+  
+  
+</body>
+</html>

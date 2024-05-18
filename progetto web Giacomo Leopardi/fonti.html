@@ -1,0 +1,181 @@
+<!DOCTYPE html>
+<html lang="it">
+<head>
+    <link rel="icon" href="favicon.png" type="image/png">
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Il giovane favoloso: biografia</title>
+    <style>
+    body {
+      font-family: "Alegreya Sans";
+      margin: 0;
+      padding: 0; 
+      min-height: 100%;
+	  background-color: #9C9C9C;} 	  
+	
+	
+	
+	.banner {
+      background-image: url('sfonfo real.png');
+	  text-shadow: 4px 4px 5px black;
+      color: white;
+      padding: 75px;
+      text-align: center;
+      font-size: 40px;
+	  background-size: cover;
+	  font-style: italic;}
+	
+	
+	nav {
+      rgba(0, 0, 0, 0.5); /* Sfondo semi-trasparente per il testo */}
+	  
+	  
+	  
+    nav ul {
+      list-style-type: none;
+      margin: 0;
+      padding: 0;
+      text-align: center;}
+	  
+	  
+	  
+    nav ul li {
+      display: inline;}
+	  
+	  
+	  
+    nav ul li a {
+      display: inline-block;
+      padding: 60px 30px;
+      text-decoration: none;
+      color: white;
+	  font-size: 30px;
+	  margin-top: 0;}
+	  
+	  
+	  
+    nav ul li a:hover {
+      background-color: rgba(0, 0, 0, 0.5); /* per quando metti il mouse nell'icona*/
+	  text-decoration: underline;}
+
+	
+	
+    footer {
+      background-color: #3D3D3D;
+      color: white;
+      padding: 10px 0;
+      text-align: center;
+      margin-top: auto;
+      width: 100%;
+      bottom: 0;
+	  background-size: cover;
+	  font-size: 30px;}
+    
+	
+	
+    .titolo {
+      text-align: center;
+      font-family: "Alegreya Sans";
+      font-weight: bold; /* bold per mettere il grassetto*/
+      font-size: 30px;
+      padding: 10px;}
+    
+	
+	
+    .content-box {
+      text-align: center;
+      font-family: "Alegreya Sans";
+      font-size: 25px;
+	  border: 1px solid black; /* Linea di 1px di spessore, colore nero */
+      padding: 5px; /* Spazio interno al bordo */
+      margin: 50px;
+	  border-top-left-radius: 10px;
+	  border-top-right-radius: 10px;
+	  border-bottom-left-radius: 10px;
+	  border-bottom-right-radius: 10px;
+	  background-color: #D2D2D2;
+	  box-shadow: 4px 4px 5px black;}	  
+	  
+	  
+	 #scrollToTopBtn {
+            display: none;
+            position: fixed;
+            bottom: 20px;
+            right: 20px;
+            padding: 10px 20px;
+            background-color: #000;
+            color: #fff;
+            border: none;
+            border-radius: 5px;
+            cursor: pointer;
+        }
+	
+	
+	
+    </style>
+    <script> 
+        window.addEventListener('scroll', function() {
+            const div = document.querySelector('div.banner');
+            div.style.opacity = 1 - window.scrollY / 600;
+        });
+    </script>   <!uso il java script per fa sì che l'immagine nel banner, scendendo con la levetta del mouse, sparisca>
+</head>
+<body>
+    <header> <!l'header mi permette di posizionare ciò che voglio in capo alla pagina>
+        <div class="banner">
+            <h1>GIACOMO LEOPARDI</h1> <! titolo !>
+                <nav> <! nav è usato per contenere link di navigazione !>
+					<ul> <! ul lo utilizzo per creare degli elenchi!>
+                        <li><a href="index.html">Biografia</a></li>
+						<li><a href="pensiero.html">Pensiero</a></li>
+                        <li><a href="opere.html">Opere</a></li>
+                        <li><a href="fonti.html">Fonti</a></li>						
+					</ul>
+			    </nav>
+		</div>		
+    </header>
+    <div class="titolo">
+        <hr> <! linea orizzontale !>
+        Fonti
+	    <hr>
+    </div>
+    <br> <! a capo !>
+    <div class="content-box">
+    <p> <! paragrafo !>
+	<ul>
+       www.chatgpt.com
+       <br>
+       www.classroom.google.com
+       <br>
+       www.youtbe.com
+<br>
+       www.giacomoleopardi.it	   
+    </ul>
+	</p>
+    </div>
+	
+    <footer> <!la stessa cosa dell'header ma in basso>
+        <p>© Biscontin Cesare</p>
+    </footer>
+
+       <button id="scrollToTopBtn" onclick="scrollToTop()">Torna su</button>
+
+    <script>
+        window.onscroll = function() {scrollFunction()};
+
+        function scrollFunction() {
+            const scrollToTopBtn = document.getElementById("scrollToTopBtn");
+            if (document.body.scrollTop > 20 || document.documentElement.scrollTop > 20) {
+                scrollToTopBtn.style.display = "block";
+            } else {
+                scrollToTopBtn.style.display = "none";
+            }
+        }
+
+        function scrollToTop() {
+            window.scrollTo({top: 0, behavior: 'smooth'});
+        }
+    </script>
+  
+</body>
+</html>
